@@ -1,0 +1,69 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" >
+        <link rel="stylesheet" href="style.css">
+        <title> Classificador de Nível de Herói </title>
+    </head>
+    <body>
+        <!--Cabeçalho-->
+        <header>
+            <h1>Bem vindo(a) ao Classificador de Nível de Herói!</h1>
+            <p>Descubra o nível do seu herói e como ele se destaca!</p>
+        </header>
+        <main>
+                <!--Introdução-->
+            <section>
+                <p>Este site foi desenvolvido como parte de um estudo sobre lógica de programação utilizando JavaScript, além de ser uma oportunidade para praticar HTML e CSS.</p>
+            </section>
+                <!--Quem é o herói-->
+            <section>
+                <h3>Insira o nome do seu herói</h3>
+                <form>
+                    <input type="text" id="herosName" placeholder="Digite o nome do seu herói">
+                </form>
+            </section>
+                <!--Qual o XP do Herói-->
+            <section>
+                <h3>Insira o XP do seu herói </h3>
+                <form>
+                    <input type ="number" id="xpHero" placeholder="Digite o número de XP do seu herói"/>
+                </form>
+                <button onclick="classificarHeroi()">Clique para visualizar o nível do seu herói</button>
+            </section>
+        </main>
+    </body>
+    <footer>
+
+    </footer>
+    <!--Função que classifica o nível do herói com base no XP inserido-->
+    <script>
+        function classificarHeroi() {
+            //obtém o nome do herói e XP inseridos pelo usuário
+            let herosName = document.getElementById("herosName").value;
+            let xpHero = parseInt(document.getElementById("xpHero").value);
+            let heroLevel;
+
+            //estrutura de decisao
+            if (xpHero <= 1000) {
+                heroLevel = "Ferro";
+            } else if (xpHero <= 2000) {
+                heroLevel = "Bronze";
+            } else if (xpHero <= 5000) {
+                heroLevel = "Prata";
+            } else if (xpHero <= 7000) {
+                heroLevel = "Ouro";
+            } else if (xpHero <= 8000) {
+                heroLevel = "Platina";
+            } else if (xpHero <= 9000) {
+                heroLevel = "Ascendente";
+            } else if (xpHero <= 10000) {
+                heroLevel = "Imortal";
+            } else {
+                heroLevel = "Radiante";
+            }
+
+            //exibe o resultado
+            alert("O Herói de nome " + herosName + " está no nível " + heroLevel + " com o total de " + xpHero + " XP.");
+        }
+    </script>
+</html>
